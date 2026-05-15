@@ -1,46 +1,74 @@
 # Caos
 
-**Caos** é uma aplicação de inteligência artificial pessoal, modular e expansível. O projeto nasce da extração das funcionalidades do antigo Sphere / AI ON / ModeON, reorganizadas em uma arquitetura limpa.
+Caos é uma aplicação de IA pessoal modular, evolutiva e controlada. O projeto nasce da reorganização dos códigos enviados em ZIPs e do antigo Sphere, mas agora com uma base limpa no repositório `Caos`.
 
-A proposta é criar uma IA com interface moderna estilo ChatGPT, identidade visual baseada em uma esfera viva, memória persistente, módulos de criação, automação, programação, permissões e execução segura.
+## Objetivo atual
 
-## Objetivo
+O objetivo neste momento **não é considerar o frontend pronto ou aprovado**.
 
-Transformar várias ideias separadas em um único sistema organizado:
+O objetivo agora é:
 
-- Chat com IA contextual.
-- Sidebar por modos: Chat, Código, Projetos, Memória, Imagem, Voz, Automação e Dev Mode.
-- Esfera energética como identidade visual e estado interno.
-- Memória persistente com busca e RAG futuro.
-- Criação e edição de projetos completos.
-- Sistema de permissões antes de ações externas.
-- Runtime seguro com sandbox, logs e rollback.
-- Evolução futura com modelos locais de texto, imagem e áudio.
-- Módulo ModeON como camada futura de disciplina e foco.
+- extrair os códigos dos ZIPs enviados;
+- identificar versões evolutivas sem chamar tudo de duplicata;
+- remover somente duplicatas reais;
+- preservar funcionalidades úteis;
+- organizar tudo em uma estrutura limpa;
+- subir no GitHub sem transformar o Caos em outro repositório bagunçado.
 
-## Estrutura
+## Relação entre os repositórios
 
 ```txt
-core/       regras fixas, segurança, permissões, integridade
-agent/      comportamento da IA, modos, roteamento e prompts
-runtime/    execução segura, sandbox, logs e pipeline de mudanças
-memory/     memória curta, longa, evolução e busca
-modules/    funcionalidades: voz, imagem, projetos, automação, ModeON
-ui/web/     interface web principal
-docs/       visão, arquitetura e mapa de funcionalidades
-tests/      testes automatizados
+Aura-sphere-                    laboratório antigo / fonte histórica
+Somente-o-frontend-visual-do-caos-  referência visual e experimentos
+Caos                             base limpa onde a reconstrução começa
 ```
 
-## Princípio central
+Os três fazem parte da mesma evolução do projeto, mas o `Caos` será usado como base organizada.
 
-O Caos pode parecer vivo, ativo e evolutivo, mas sua execução deve ser controlada:
+## Estrutura alvo
 
 ```txt
-usuário → core imutável → supervisor → agent → runtime → sandbox → produção
+apps/
+  web/        frontend em construção
+  api/        backend/API local
+
+packages/
+  core/       permissões, segurança e regras fixas
+  agent/      modos, roteamento e comportamento da IA
+  runtime/    execução controlada, logs e sandbox
+  memory/     memória curta, longa e busca futura
+  modules/    ferramentas e capacidades da IA
+
+migration/
+  incoming/   inventário dos arquivos recebidos
+  extracted/  partes extraídas dos ZIPs
+  mapping/    mapas do que veio de onde
+  archive/    histórico preservado sem poluir a raiz
+
+docs/         documentação e decisões técnicas
+workspace/    área futura para projetos criados pela IA
 ```
 
-A IA pode propor, simular e testar mudanças. A aplicação real só muda com validação e permissão.
+## Regra de migração
 
-## Estado inicial
+Nada entra no Caos apenas porque existe em um ZIP.
 
-Este repositório foi criado como nova base limpa do projeto Caos. A implementação será evoluída por módulos, sem copiar a desorganização do projeto antigo.
+Cada parte deve passar por:
+
+```txt
+Auditoria → Deduplicação → Extração → Organização → Integração
+```
+
+## Estado atual
+
+Já existe uma documentação inicial de arquitetura e checklist de migração.
+
+A próxima etapa é subir os códigos extraídos dos ZIPs em camadas, começando por uma base organizada e rastreável.
+
+## Prioridade imediata
+
+1. Criar a estrutura limpa de pastas.
+2. Registrar o inventário dos ZIPs enviados.
+3. Subir arquivos de código úteis sem duplicatas.
+4. Separar histórico bruto de código ativo.
+5. Depois iniciar a reconstrução real do frontend, backend e módulos.
