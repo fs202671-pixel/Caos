@@ -1,0 +1,20 @@
+{
+  "name": "caos-ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Caos: IA pessoal modular com memória, permissões, runtime seguro e interface evolutiva.",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@types/node": "latest",
+    "tsx": "latest",
+    "typescript": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {}
+}
